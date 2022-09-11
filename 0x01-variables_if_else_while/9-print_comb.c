@@ -1,26 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * main - Printing numbers form 0-9 with commas and space between them.
- *Description: using the main function
- *this program prints "0, 1, 2, 3, 4, 5, 6, 7, 8, 9"
- * Return: Always 0.
+ * main - print all posible combinations of single-digit
+ * separated by ,
+ * Description: should be printed in ascending order
+ * print through putchar
+ *
+ * Return:zero
  */
 int main(void)
 {
-	int num;
-
-	for (num = 0; num <= 9; num++)
+int c = 0;
+	while (c < 10)
 	{
-		putchar((num % 10) + '0');
-		if (num == 9)
-			continue;
-		
+		putchar(48 + c);
+	if (c != 9)
+	{
 		putchar(',');
 		putchar(' ');
 	}
-
+	c++;
+	}
 	putchar('\n');
-
 	return (0);
 }
