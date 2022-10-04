@@ -9,29 +9,15 @@
 char *create_array(unsigned int size, char c)
 {
 char *array;
-unsigned int position;
+unsigned int index;
 
 if (size == 0)
-{
-return (NULL);
-}
+        return (NULL);
+array = malloc(sizeof(char) * size);
 
-/*Define values with malloc*/
-array = (char *) malloc(size * sizeof(c));
-
-if (array == 0)
-{
-return (NULL);
-}
-
-else
-{
-position = 0;
-while (position < size) /*While for array*/
-{
-*(array + position) = c;
-position++;
-}
-
-return (array);
+if (array == NULL)
+        return (NULL);
+for (index = 0; index < size; index++)
+        array[index] = c;
+  return (array);
 }
