@@ -1,50 +1,16 @@
-#include "dog.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include "dog.h"
 
 /**
- * new_dog - new dog
- * @name: name's dog
- * @age: age's dog
- * @owner: owner's dog
- * Return: newdog
+ * main - check the code
+ *
+ * Return: Always 0.
  */
-
-dog_t *new_dog(char *name, float age, char *owner)
+int main(void)
 {
+    dog_t *my_dog;
 
-	int i = 0, j = 0, k;
-	dog_t *doggo;
-
-	while (name[i] != '\0')
-		i++;
-	while (owner[j] != '\0')
-		j++;
-	doggo = malloc(sizeof(dog_t));
-	if (doggo == NULL)
-	{
-		free(doggo);
-		return (NULL);
-	}
-	doggo->name = malloc(i * sizeof(doggo->name));
-	if (doggo->name == NULL)
-	{
-		free(doggo->name);
-		free(doggo);
-		return (NULL);
-	}
-	for (k = 0; k <= i; k++)
-		doggo->name[k] = name[k];
-	doggo->age = age;
-	doggo->owner = malloc(j * sizeof(doggo->owner));
-	if (doge->owner == NULL)
-	{
-		free(doggo->owner);
-		free(doggo->name);
-		free(doggo);
-		return (NULL);
-	}
-	for (k = 0; k <= j; k++)
-		doggo->owner[k] = owner[k];
-	return (doggo);
+    my_dog = new_dog("Poppy", 3.5, "Bob");
+    printf("My name is %s, and I am %.1f :) - Woof!\n", my_dog->name, my_dog->age);
+    return (0);
 }
